@@ -1,0 +1,28 @@
+export default function Hero() {
+  return (
+    <section className="relative flex flex-col items-center justify-center text-center min-h-screen px-6 bg-white pt-20">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(0,233,255,0.06),transparent_40%),radial-gradient(circle_at_80%_80%,rgba(0,230,118,0.06),transparent_40%)] pointer-events-none"></div>
+      <div className="z-10">
+  <h2 className="text-5xl md:text-6xl font-bold max-w-3xl leading-tight text-gray-900">
+          Drive Together,<br></br> Save Together, <br /> India's #1 Open Travel Sharing Platform. <br />
+          <span className="bg-gradient-to-r from-[#007A3D] to-[#0077CC] bg-clip-text text-transparent">
+            Join the LINQ Movement.
+          </span>
+        </h2>
+        <p className="mt-6 text-gray-600 max-w-2xl mx-auto text-lg">
+          We’re already a thriving community — over{" "}
+          <span className="text-[#00E676] font-semibold">30K+ followers</span> and{" "}
+          <span className="text-[#00C9FF] font-semibold">5K daily active users</span> 
+          — united by one goal: smarter, cleaner, affordable commuting.
+        </p>
+        <button className="mt-10 bg-gradient-to-r from-[#00A86B] to-[#0077CC] text-white font-semibold px-10 py-4 rounded-full hover:shadow-[0_0_20px_rgba(0,119,204,0.18)] transition">
+          JOIN FOR FREE
+        </button>
+        <p className="mt-4 text-md text-gray-500">
+          Register for early access and get 3 months of free cost-sharing connections.
+        </p>
+        
+      </div>
+    </section>
+  );
+}
