@@ -25,7 +25,7 @@ export default function Navbar() {
       <div className="flex justify-between items-center max-w-7xl mx-auto px-8 py-5 relative ">
         {/* Logo */}
         <h1 className="text-3xl font-extrabold bg-gradient-to-r from-[#00E676] to-[#00C9FF] bg-clip-text text-transparent select-none">
-          LINQ
+          LinQ
         </h1>
 
         {/* Desktop Menu */}

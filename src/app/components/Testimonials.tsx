@@ -6,7 +6,7 @@ export default function Testimonials() {
   const [items, setItems] = useState(() => [
     {
       quote:
-        "LINQ transformed my commute — smart matching and friendly riders make every trip enjoyable.",
+        "LinQ transformed my commute — smart matching and friendly riders make every trip enjoyable.",
       name: "Anika Rao",
       role: "Product Manager",
       color: "from-[#00E676] to-[#00C9FF]",
@@ -24,13 +24,13 @@ export default function Testimonials() {
       color: "bg-[#7C3AED]",
     },
     {
-      quote: "LINQ Points are a nice bonus. The app rewards regular sharers.",
+      quote: "LinQ Points are a nice bonus. The app rewards regular sharers.",
       name: "Karan Patel",
       role: "Freelancer",
       color: "bg-[#00A86B]",
     },
     {
-      quote: "The community is warm and reliable — I recommend LINQ to colleagues.",
+      quote: "The community is warm and reliable — I recommend LinQ to colleagues.",
       name: "Meera N",
       role: "Entrepreneur",
       color: "bg-[#FF6B6B]",
@@ -111,7 +111,7 @@ export default function Testimonials() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-10">
           <h3 className="text-3xl text-[#7a7b7c] font-extrabold">What our community says</h3>
-          <p className="text-gray-500 mt-2">Real stories from riders across LINQ.</p>
+          <p className="text-gray-500 mt-2">Real stories from riders across LinQ.</p>
         </div>
 
         <div className="relative">

@@ -17,7 +17,7 @@
 //   },
 //   {
 //     title: "Rewards",
-//     desc: "Earn LINQ Points every time you share a ride — redeem them for discounts & perks.",
+//     desc: "Earn LinQ Points every time you share a ride — redeem them for discounts & perks.",
 //   },
 // ];
 
@@ -47,10 +47,10 @@
 
 //       <div className="max-w-6xl mx-auto relative">
 //         <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-[#00E676] to-[#00C9FF] bg-clip-text text-transparent">
-//           Why Ride with LINQ?
+//           Why Ride with LinQ?
 //         </h2>
 //         <p className="text-gray-400 mb-10 max-w-2xl mx-auto">
-//           LINQ combines smart matching, transparent costs and a community-first approach to make commuting easier
+//           LinQ combines smart matching, transparent costs and a community-first approach to make commuting easier
 //           and more sustainable. Here are the core benefits you get as a member.
 //         </p>
 
@@ -148,7 +148,7 @@ const features = [
   },
   {
     title: "Rewards",
-    desc: "Earn LINQ Points every time you share a ride — redeem them for discounts & perks.",
+    desc: "Earn LinQ Points every time you share a ride — redeem them for discounts & perks.",
   },
 ];
 
@@ -178,10 +178,10 @@ export default function Features() {
 
       <div className="max-w-6xl mx-auto relative z-10">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-[#00E676] to-[#00C9FF] bg-clip-text text-transparent px-4">
-          Why Ride with LINQ?
+          Why Ride with LinQ?
         </h2>
         <p className="text-gray-400 text-sm sm:text-base md:text-lg mb-8 sm:mb-10 max-w-2xl mx-auto px-4">
-          LINQ combines smart matching, transparent costs and a community-first approach to make commuting easier
+          LinQ combines smart matching, transparent costs and a community-first approach to make commuting easier
           and more sustainable. Here are the core benefits you get as a member.
         </p>
 

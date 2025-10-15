@@ -5,7 +5,7 @@ export default function CTA() {
       <div className="max-w-3xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-extrabold mb-4">Ready to Ride Smarter?</h2>
         <p className="text-lg md:text-xl mb-8 text-indigo-50/95">
-          Be part of a community that travels better together. Join our <strong className="font-semibold">30K+ LINQ family</strong> driving positive change every day.
+          Be part of a community that travels better together. Join our <strong className="font-semibold">30K+ LinQ family</strong> driving positive change every day.
         </p>
 
         <div className="flex items-center justify-center gap-4">

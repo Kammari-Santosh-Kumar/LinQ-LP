@@ -9,11 +9,11 @@
 //           {/* Left content column */}
 //           <div className="lg:w-1/2 z-10">
 //             <h2 className="text-3xl md:text-4xl font-extrabold text-gray-600 leading-tight mb-4">
-//               What is <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#00E676] to-[#00C9FF]">LINQ</span>?
+//               What is <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#00E676] to-[#00C9FF]">LinQ</span>?
 //             </h2>
 
 //             <p className="text-lg text-gray-600 mb-6">
-//               A smarter way to commute — LINQ connects people, shares costs, and
+//               A smarter way to commute — LinQ connects people, shares costs, and
 //               builds trusted, community-first rides. From smart matching to women-only pools,
 //               we make everyday travel safer, greener and more affordable.
 //             </p>
@@ -106,7 +106,7 @@
 //                       </svg>
 //                     </div>
 //                     <h4 className="font-semibold mb-1">Rewards</h4>
-//                     <p className="text-gray-600 text-sm">Earn LINQ Points for sharing rides.</p>
+//                     <p className="text-gray-600 text-sm">Earn LinQ Points for sharing rides.</p>
 //                   </div>
 //                 </div>
 
@@ -167,7 +167,7 @@ export default function Content() {
       ),
       color: "bg-[#0077CC]",
       title: "Gamified Rewards",
-      description: "Level up with every ride! Earn LINQ coins, unlock perks, and compete on leaderboards."
+      description: "Level up with every ride! Earn LinQ coins, unlock perks, and compete on leaderboards."
     },
     {
       icon: (
@@ -191,11 +191,11 @@ export default function Content() {
           {/* Left content column */}
           <div className="lg:w-1/2 z-10">
             <h2 className="text-3xl md:text-4xl font-extrabold text-gray-600 leading-tight mb-4">
-              What is <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#00E676] to-[#00C9FF]">LINQ</span>?
+              What is <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#00E676] to-[#00C9FF]">LinQ</span>?
             </h2>
 
             <p className="text-lg text-gray-600 mb-6">
-              A smarter way to commute — LINQ connects people, shares costs, and
+              A smarter way to commute — LinQ connects people, shares costs, and
               builds trusted, community-first rides. From smart matching to women-only pools,
               we make everyday travel safer, greener and more affordable.
             </p>
