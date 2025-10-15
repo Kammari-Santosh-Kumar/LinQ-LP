@@ -10,7 +10,7 @@ const sora = Sora({
 
 export const metadata: Metadata = {
   title: "LinQ",
-  description: "Routes & Rides",
+  
 };
 
 export default function RootLayout({
