@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -13,7 +14,9 @@
 
 /* Prevent horizontal scrolling/gutters across the site */
 html, body, #__next {
-  overflow-x: hidden;
+    overflow-x: hidden;
+  max-width: 100vw;
+  position: relative;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -25,6 +28,7 @@ html, body, #__next {
 
 
 body {
+  
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;

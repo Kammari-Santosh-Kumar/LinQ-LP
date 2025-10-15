@@ -26,6 +26,7 @@
 //     </section>
 //   );
 // }
+import Link from "next/link";
 export default function Hero() {
   return (
     <section className="relative flex flex-col items-center justify-center text-center min-h-screen px-6 md:px-0 bg-white pt-20">
@@ -50,9 +51,11 @@ export default function Hero() {
         </p>
 
         {/* Button */}
+        <Link href="https://forms.gle/EK6ScmSd65bBH2X5A" passHref>
         <button className="mt-6 sm:mt-10 bg-gradient-to-r from-[#00A86B] to-[#0077CC] text-white font-semibold px-8 sm:px-10 py-3 sm:py-4 rounded-full hover:shadow-[0_0_20px_rgba(0,119,204,0.18)] transition">
           JOIN FOR FREE
         </button>
+        </Link>
 
         {/* Small note */}
         <p className="mt-2 sm:mt-4 text-sm sm:text-md text-gray-500 max-w-xs sm:max-w-full mx-auto px-2">

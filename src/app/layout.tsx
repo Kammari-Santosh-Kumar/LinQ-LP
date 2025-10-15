@@ -19,9 +19,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${sora.variable} antialiased`}>
-        {children}
+    <html lang="en" className="overflow-x-hidden">
+      <body className={`${sora.variable} antialiased overflow-x-hidden`}>
+        <div className="w-full overflow-x-hidden">
+          {children}
+        </div>
       </body>
     </html>
   );

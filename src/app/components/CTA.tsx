@@ -1,3 +1,4 @@
+import Link from "next/link";
 export default function CTA() {
   return (
     <section className="text-center py-24 px-6 md:px-12 bg-gradient-to-r from-indigo-600 via-teal-500 to-cyan-400 text-white rounded-3xl mx-6 md:mx-20 mt-16 shadow-lg">
@@ -8,9 +9,11 @@ export default function CTA() {
         </p>
 
         <div className="flex items-center justify-center gap-4">
+          <Link href="https://forms.gle/EK6ScmSd65bBH2X5A" passHref>
           <button className="bg-white text-indigo-700 px-10 py-4 rounded-full font-semibold shadow-md hover:-translate-y-1 transform transition">
             JOIN FOR FREE
           </button>
+          </Link>
 
         </div>
       </div>

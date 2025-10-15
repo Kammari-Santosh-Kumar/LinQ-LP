@@ -2,6 +2,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -21,7 +22,7 @@ export default function Navbar() {
           : "bg-transparent max-w-full left-0 mt-0 translate-y-0"
       }`}
     >
-      <div className="flex justify-between items-center max-w-7xl mx-auto px-8 py-5 relative">
+      <div className="flex justify-between items-center max-w-7xl mx-auto px-8 py-5 relative ">
         {/* Logo */}
         <h1 className="text-3xl font-extrabold bg-gradient-to-r from-[#00E676] to-[#00C9FF] bg-clip-text text-transparent select-none">
           LINQ
@@ -36,10 +37,11 @@ export default function Navbar() {
         </ul>
 
         {/* Desktop Button */}
-        <button className="hidden md:block bg-gradient-to-r from-[#00E676] to-[#00C9FF] text-black font-semibold px-5 py-2 rounded-full hover:shadow-[0_0_20px_#00E676] transition">
-          JOIN FOR FREE
-        </button>
-
+       <Link href="https://forms.gle/EK6ScmSd65bBH2X5A" passHref>
+  <button className="hidden md:block bg-gradient-to-r from-[#00E676] to-[#00C9FF] text-black font-semibold px-5 py-2 rounded-full hover:shadow-[0_0_20px_#00E676] transition">
+    JOIN FOR FREE
+  </button>
+</Link>
         {/* Mobile Hamburger */}
         <div className="md:hidden absolute left-1/2 -translate-x-1/2">
           <button
