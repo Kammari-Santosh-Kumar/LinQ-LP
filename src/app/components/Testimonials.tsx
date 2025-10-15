@@ -8,31 +8,31 @@ export default function Testimonials() {
       quote:
         "LINQ transformed my commute — smart matching and friendly riders make every trip enjoyable.",
       name: "Anika Rao",
-      
+      role: "Product Manager",
       color: "from-[#00E676] to-[#00C9FF]",
     },
     {
       quote: "Cost splitting is effortless — rides feel fair and transparent.",
       name: "Rahul Verma",
-     
+      role: "Designer",
       color: "bg-[#FFB86B]",
     },
     {
       quote: "Women-only pools make me feel safe and confident every day.",
       name: "Priya Singh",
-    
+      role: "Software Engineer",
       color: "bg-[#7C3AED]",
     },
     {
       quote: "LINQ Points are a nice bonus. The app rewards regular sharers.",
       name: "Karan Patel",
-     
+      role: "Freelancer",
       color: "bg-[#00A86B]",
     },
     {
       quote: "The community is warm and reliable — I recommend LINQ to colleagues.",
       name: "Meera N",
-     
+      role: "Entrepreneur",
       color: "bg-[#FF6B6B]",
     },
   ]);
@@ -203,7 +203,9 @@ export default function Testimonials() {
                 onKeyDown={(e) => {
                   if (e.key === "Enter" || e.key === " ") setActive(active === i ? null : i);
                 }}
-               ref={(el) => { refs.current[t.name] = el; }}
+              ref={(el) => {
+  refs.current[t.name] = el;
+}}
 
                 className={`${sizeClass} p-6 ${i % 2 === 0 ? "bg-gray-50" : "bg-white"} rounded-2xl shadow-sm border card-appeal card-enter relative tilt ${isActive ? 'glow-border active' : ''} focus:outline-none focus-visible:ring-4 focus-visible:ring-indigo-200`}
                 style={{ transform, opacity, zIndex: z, ['--delay' as any]: delay }}
@@ -229,7 +231,7 @@ export default function Testimonials() {
                     <div className={`w-12 h-12 rounded-full ${t.color} flex items-center justify-center text-white font-semibold`}>{t.name[0]}</div>
                     <div>
                       <div className="font-medium text-gray-900">{t.name}</div>
-                      
+                      <div className="text-sm text-gray-500">{t.role}</div>
                     </div>
                   </div>
                 </div>
