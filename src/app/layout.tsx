@@ -22,6 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="overflow-x-hidden">
       <body className={`${sora.variable} antialiased overflow-x-hidden`}>
+         <Analytics />
         <div className="w-full overflow-x-hidden">
           {children}
         </div>
