@@ -62,7 +62,7 @@ export default function CareersCTA() {
         </p>
 
         <div className="flex items-center justify-center gap-4">
-          <Link href="YOUR_CAREERS_LINK_HERE" passHref>
+          <Link href="https://docs.google.com/forms/d/e/1FAIpQLScCsaBXeMS_FCF_LIyGpQsWoagHuDv-FWoSEa_ul5dRpem1Qw/viewform?usp=dialog" passHref>
             <button className="bg-white text-orange-600 px-10 py-4 rounded-full font-semibold shadow-md hover:-translate-y-1 hover:shadow-xl transform transition duration-300">
               APPLY NOW
             </button>
