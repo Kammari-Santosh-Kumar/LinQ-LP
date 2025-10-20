@@ -16,20 +16,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className="overflow-x-hidden">
       <body className={`${sora.variable} antialiased overflow-x-hidden`}>
-        <div className="w-full overflow-x-hidden">
-          {children}
-          
-        </div>
-         <Script
+        {children}
+
+        {/* Cloudflare Web Analytics */}
+        <Script
           id="cloudflare-analytics"
           strategy="afterInteractive"
-          defer
           src="https://static.cloudflareinsights.com/beacon.min.js"
           data-cf-beacon='{"token": "896a765c18af4f6099fbe663827a789e"}'
         />
