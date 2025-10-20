@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Sora } from "next/font/google";
 import "./globals.css";
-
+import Script from "next/script";
 
 const sora = Sora({
   variable: "--font-sora",
@@ -26,6 +26,13 @@ export default function RootLayout({
           {children}
           
         </div>
+         <Script
+          id="cloudflare-analytics"
+          strategy="afterInteractive"
+          defer
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon='{"token": "896a765c18af4f6099fbe663827a789e"}'
+        />
       </body>
     </html>
   );
