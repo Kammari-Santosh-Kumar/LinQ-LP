@@ -1,4 +1,3 @@
-
 // import Link from "next/link";
 
 // export default function Hero() {
@@ -187,7 +186,7 @@ export default function Hero() {
           are driving smarter, cleaner, and brighter!
         </p>
 
- <p
+        <p
           className="mt-5 text-lg font-semibold bg-gradient-to-r from-[#FFD700] via-[#FFB300] to-[#FFA000] bg-[length:200%_auto] bg-clip-text text-transparent "
         >
           🎁 Be our early-access beta users and get a chance to win a Silver Coin! 
@@ -201,6 +200,12 @@ export default function Hero() {
         <p className="mt-2 sm:mt-4 text-sm sm:text-md text-gray-300 max-w-xs sm:max-w-full mx-auto px-2">
           Register now and enjoy 3 months of free cost-sharing connections.
         </p>
+
+        {/* Winners Announcement Box */}
+        <div className="mt-6 pt-4 pb-6 md:p-6 border border-gray-300 rounded-lg bg-gradient-to-r from-[#FFD700] to-[#FF8C00] text-center shadow-lg mb-6">
+          <h3 className="text-xl md:text-2xl font-bold text-white">🎉 Winners Will Be Announced Soon!</h3>
+          <p className="mt-2 text-base md:text-lg text-white">Stay tuned for updates!</p>
+        </div>
       </div>
     </section>
   );
