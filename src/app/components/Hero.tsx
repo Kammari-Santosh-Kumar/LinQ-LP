@@ -161,7 +161,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative flex flex-col items-center justify-center text-center min-h-screen px-6 md:px-2 bg-black overflow-hidden">
+    <section className="relative flex flex-col items-center justify-center text-center min-h-screen px-6 md:px-2 bg-black overflow-hidden pt-24 md:pt-28">
       {/* Fireworks Canvas */}
       <canvas
         id="fireworks"
@@ -171,26 +171,26 @@ export default function Hero() {
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px]"></div>
 
+      {/* Hero Content */}
       <div className="z-10 text-white">
         <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold max-w-xl sm:max-w-3xl leading-tight">
-          Drive Together,<br /> Save Together, <br />
+          Commute. Connect. <br />
           <span className="bg-gradient-to-r from-[#FFD700] via-[#FF8C00] to-[#FF4500] bg-clip-text text-transparent">
-            India's #1 Open Travel Sharing Platform.
+            Telangana’s First Open Travel Platform.
           </span>
         </h2>
 
         <p className="mt-4 sm:mt-6 text-gray-200 max-w-md sm:max-w-2xl mx-auto text-base sm:text-lg">
-          Celebrate this Diwali with us! Over{" "}
-          <span className="text-[#FFD700] font-semibold">30K+ followers</span> and{" "}
-          <span className="text-[#FF9100] font-semibold">5K daily active users</span>{" "}
-          are driving smarter, cleaner, and brighter!
+          Trusted by{" "}
+          <span className="text-[#FFD700] font-semibold">30K+ users</span> and{" "}
+          <span className="text-[#FF9100] font-semibold">5K+ daily commuters</span>{" "}
+          — driving sustainability, saving fuel, and building community.
         </p>
 
-        <p
-          className="mt-5 text-lg font-semibold bg-gradient-to-r from-[#FFD700] via-[#FFB300] to-[#FFA000] bg-[length:200%_auto] bg-clip-text text-transparent "
-        >
-          🎁 Be our early-access beta users and get a chance to win a Silver Coin! 
+        <p className="mt-5 text-lg font-semibold bg-gradient-to-r from-[#FFD700] via-[#FFB300] to-[#FFA000] bg-[length:200%_auto] bg-clip-text text-transparent">
+          🎁 Be our early-access beta users and get a chance to win a Silver Coin!
         </p>
+
         <Link href="https://forms.gle/EK6ScmSd65bBH2X5A" passHref>
           <button className="mt-6 sm:mt-10 bg-gradient-to-r from-[#FF6F00] to-[#FFD740] text-black font-semibold px-8 sm:px-10 py-3 sm:py-4 rounded-full hover:shadow-[0_0_30px_rgba(255,200,0,0.6)] transition-all">
             🪔 JOIN FOR FREE
@@ -203,10 +203,15 @@ export default function Hero() {
 
         {/* Winners Announcement Box */}
         <div className="mt-6 pt-4 pb-6 md:p-6 border border-gray-300 rounded-lg bg-gradient-to-r from-[#FFD700] to-[#FF8C00] text-center shadow-lg mb-6">
-          <h3 className="text-xl md:text-2xl font-bold text-white">🎉 Winners Will Be Announced Soon!</h3>
-          <p className="mt-2 text-base md:text-lg text-white">Stay tuned for updates!</p>
+          <h3 className="text-xl md:text-2xl font-bold text-white">
+            🎉 Winners Will Be Announced Soon!
+          </h3>
+          <p className="mt-2 text-base md:text-lg text-white">
+            Stay tuned for updates!
+          </p>
         </div>
       </div>
     </section>
   );
 }
+

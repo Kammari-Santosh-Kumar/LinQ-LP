@@ -231,7 +231,7 @@ const Navbar: React.FC<NavbarProps> = ({ refs }) => {
 
   const scrollToSection = (ref: React.RefObject<HTMLDivElement | null>) => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
-    setMenuOpen(false); // close mobile menu
+    setMenuOpen(false);
   };
 
   return (
@@ -242,14 +242,14 @@ const Navbar: React.FC<NavbarProps> = ({ refs }) => {
           : "bg-transparent max-w-full left-0 mt-0 translate-y-0"
       }`}
     >
-      <div className="flex justify-between items-center max-w-7xl mx-auto px-8 py-5 relative ">
+      <div className="flex justify-between items-center max-w-7xl mx-auto px-10 py-5 relative">
         {/* Logo */}
         <h1 className="text-3xl font-extrabold bg-gradient-to-r from-[#00E676] to-[#00C9FF] bg-clip-text text-transparent select-none">
           LinQ
         </h1>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex gap-8 text-[#7a7b7c] font-medium">
+        <ul className="hidden md:flex gap-14 ml-10 text-[#7a7b7c] font-medium">
           <li
             className="hover:text-[#00E676] transition cursor-pointer"
             onClick={() => scrollToSection(refs.home)}
@@ -279,32 +279,35 @@ const Navbar: React.FC<NavbarProps> = ({ refs }) => {
         {/* Desktop Button */}
         <button
           onClick={() => scrollToSection(refs.features)}
-          className="hidden md:block bg-gradient-to-r from-[#00E676] to-[#00C9FF] text-black font-semibold px-5 py-2 rounded-full hover:shadow-[0_0_20px_#00E676] transition"
+          className="hidden md:block bg-gradient-to-r from-[#00E676] to-[#00C9FF] text-black font-semibold px-6 py-2 rounded-full hover:shadow-[0_0_20px_#00E676] transition"
         >
           JOIN FOR FREE
         </button>
 
         {/* Mobile Hamburger */}
-        <div className="md:hidden absolute left-1/2 -translate-x-1/2">
+        <div className="md:hidden absolute right-8">
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="p-2 bg-gradient-to-r from-[#00E676]/20 to-[#00C9FF]/20 rounded-full border border-[#00E676]/30 shadow-lg transition hover:scale-105"
           >
-            {menuOpen ? <X className="text-[#00E676] w-6 h-6" /> : <Menu className="text-[#00E676] w-6 h-6" />}
+            {menuOpen ? (
+              <X className="text-[#00E676] w-6 h-6" />
+            ) : (
+              <Menu className="text-[#00E676] w-6 h-6" />
+            )}
           </button>
         </div>
       </div>
 
       {/* Mobile Dropdown */}
       <div
-        className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden
-          ${menuOpen ? "max-h-64 opacity-100 py-4" : "max-h-0 opacity-0 py-0"}
-          mx-6 mb-4
-          ${
-            scrolled
-              ? "bg-transparent border-none shadow-none rounded-none"
-              : "bg-gradient-to-r from-[#0f2027]/95 via-[#203a43]/95 to-[#2c5364]/95 border border-[#00E676]/20 shadow-[0_10px_25px_rgba(0,0,0,0.5)] rounded-2xl"
-          }`}
+        className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden ${
+          menuOpen ? "max-h-64 opacity-100 py-4" : "max-h-0 opacity-0 py-0"
+        } mx-8 mb-4 ${
+          scrolled
+            ? "bg-transparent border-none shadow-none rounded-none"
+            : "bg-gradient-to-r from-[#0f2027]/95 via-[#203a43]/95 to-[#2c5364]/95 border border-[#00E676]/20 shadow-[0_10px_25px_rgba(0,0,0,0.5)] rounded-2xl"
+        }`}
         style={{ transformOrigin: "top center" }}
       >
         <ul className="flex flex-col items-center gap-4 text-[#d0d0d0] font-medium">
@@ -339,3 +342,4 @@ const Navbar: React.FC<NavbarProps> = ({ refs }) => {
 };
 
 export default Navbar;
+
