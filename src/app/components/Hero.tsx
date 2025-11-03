@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative flex flex-col items-center justify-center text-center min-h-screen px-6 md:px-2 bg-white pt-[-20] md:pt-20">
+  <section className="relative flex flex-col items-center justify-center text-center min-h-screen px-6 md:px-2 bg-white pt-20 md:pt-28">
       {/* Background gradients */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(0,233,255,0.06),transparent_40%),radial-gradient(circle_at_80%_80%,rgba(0,230,118,0.06),transparent_40%)] pointer-events-none"></div>
 
@@ -38,11 +38,10 @@ export default function Hero() {
           Register for early access and get 3 months of free cost-sharing connections.
         </p>
 
-         <div className="mt-6 pt-4 pb-6 md:p-6 border border-gray-300 rounded-lg bg-gradient-to-r from-[#FFD700] to-[#FF8C00] text-center shadow-lg mb-6">
+         <div className="mt-6 pt-4 pb-6 md:p-6 border border-gray-300 rounded-lg bg-gradient-to-r from-[#FFD700] to-[#FF8C00] text-center shadow-lg mb-6 max-w-3xl w-full mx-auto">
           <h3 className="text-xl md:text-2xl font-bold text-white">Silver Coin Winners</h3>
           <p className="mt-2 text-sm md:text-base text-white">Celebrating our winners</p>
-
-          <div className="mt-4 grid grid-cols-3 gap-3 items-start">
+          <div className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-3 items-start">
             <img src="/Winner1.jpg" alt="Winner 1" className="w-full aspect-square object-cover rounded-lg shadow-sm" />
             <img src="/Winner2.jpg" alt="Winner 2" className="w-full aspect-square object-cover rounded-lg shadow-sm" />
             <img src="/Winner3.png" alt="Winner 3" className="w-full aspect-square object-cover rounded-lg shadow-sm" />
