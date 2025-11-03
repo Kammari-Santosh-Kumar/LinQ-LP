@@ -333,7 +333,7 @@ const Navbar: React.FC<NavbarProps> = ({ refs }) => {
             className="hover:text-[#00C9FF] transition cursor-pointer"
             onClick={() => scrollToSection(refs.footer)}
           >
-            Contact
+            Careers
           </li>
         </ul>
       </div>

@@ -61,15 +61,15 @@ export default function CareersCTA() {
           Join a passionate crew shaping the future of smarter, connected travel.
         </p>
 
-        <div className="flex items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full">
           <Link href="https://docs.google.com/forms/d/e/1FAIpQLScCsaBXeMS_FCF_LIyGpQsWoagHuDv-FWoSEa_ul5dRpem1Qw/viewform?usp=dialog" passHref>
-            <button className="bg-white text-orange-600 px-10 py-4 rounded-full font-semibold shadow-md hover:-translate-y-1 hover:shadow-xl transform transition duration-300">
+              <button className="w-full sm:w-auto bg-white text-orange-600 px-10 py-4 rounded-full font-semibold shadow-md hover:-translate-y-1 hover:shadow-xl transform transition duration-300">
               APPLY NOW
             </button>
           </Link>
 
           <Link href="https://docs.google.com/forms/d/e/1FAIpQLSfz0OIz3xzatjYUYH-NuP_RVcrK5cW8ETBjlP-3NfQ9sqWi3Q/viewform" passHref>
-            <button className="border border-white/40 text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition">
+              <button className="w-full sm:w-auto border border-white/40 text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition">
               Build Our Logo
             </button>
           </Link>
