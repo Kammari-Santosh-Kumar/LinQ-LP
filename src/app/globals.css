@@ -108,3 +108,14 @@ body {
 .accent-a { width: 160px; height: 100px; background: linear-gradient(90deg,#00E676,#00C9FF); right: -40px; top: -40px; }
 .accent-b { width: 200px; height: 120px; background: linear-gradient(90deg,#7C3AED,#FF6B6B); left: -50px; bottom: -30px; }
 
+/* Ensure all native and ARIA buttons show pointer cursor */
+button,
+[role="button"],
+input[type="button"],
+input[type="submit"] {
+  cursor: pointer;
+}
+
+/* Utility for elements styled as buttons (optional) */
+.btn { cursor: pointer; }
+

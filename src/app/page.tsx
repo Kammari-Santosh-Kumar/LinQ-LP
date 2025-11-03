@@ -7,6 +7,8 @@ import CareersCTA from "./components/CareersCTA";
 import Footer from "./components/Footer";
 import Content from "./components/Content";
 import Testimonials from "./components/Testimonials";
+import Differences from "./components/Differences";
+import CoreFeatures from "./components/CoreFeatures";
 
 export default function Home() {
   // Refs for scrollable sections
@@ -33,6 +35,9 @@ export default function Home() {
       <div ref={contentRef}>
         <Content />
       </div>
+
+      <Differences />
+      <CoreFeatures />
 
       <div ref={featuresRef}>
         <Features />
