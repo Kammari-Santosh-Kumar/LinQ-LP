@@ -64,7 +64,7 @@ export default function CareersCTA() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full">
           <Link href="https://docs.google.com/forms/d/e/1FAIpQLScCsaBXeMS_FCF_LIyGpQsWoagHuDv-FWoSEa_ul5dRpem1Qw/viewform?usp=dialog" passHref>
               <button className="w-full sm:w-auto bg-white text-orange-600 px-10 py-4 rounded-full font-semibold shadow-md hover:-translate-y-1 hover:shadow-xl transform transition duration-300">
-              APPLY NOW
+              Apply Now
             </button>
           </Link>
 
@@ -76,7 +76,7 @@ export default function CareersCTA() {
         </div>
 
         <p className="mt-6 text-sm text-white/80">
-          Exciting roles. Real impact. Celebrate Diwali with new beginnings at LinQ. ✨
+          Exciting roles. Real impact. ✨
         </p>
       </div>
     </section>
