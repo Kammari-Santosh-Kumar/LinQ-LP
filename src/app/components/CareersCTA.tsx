@@ -53,7 +53,7 @@ export default function CareersCTA() {
     >
       <div className="max-w-3xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-extrabold mb-4 drop-shadow-md text-center">
-      LinQ is Growing this Diwali🎆
+      We are Expanding Our Family!
     </h2>
         <p className="text-lg md:text-xl mb-8 text-white/90">
           This festive season, we're expanding our{" "}
