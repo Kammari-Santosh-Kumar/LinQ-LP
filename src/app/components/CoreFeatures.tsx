@@ -78,19 +78,45 @@ const CoreFeatures = () => {
 
 function Carousel({ items }: { items: any[] }) {
   const [index, setIndex] = useState(0);
-  const len = items.length;
+  const [slidesPerView, setSlidesPerView] = useState(1);
   const timer = useRef<number | null>(null);
+
+  // determine slidesPerView based on viewport (match Tailwind md breakpoint: 768px)
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 768px)");
+    const update = () => setSlidesPerView(mq.matches ? 2 : 1);
+    update();
+    if (mq.addEventListener) mq.addEventListener("change", update);
+    else mq.addListener(update);
+    return () => {
+      if (mq.removeEventListener) mq.removeEventListener("change", update as any);
+      else mq.removeListener(update as any);
+    };
+  }, []);
+
+  // Build pages: each page contains up to slidesPerView items
+  const pages: any[] = [];
+  for (let i = 0; i < items.length; i += slidesPerView) {
+    pages.push(items.slice(i, i + slidesPerView));
+  }
+  const pagesCount = pages.length;
+
+  // reset index when slidesPerView changes
+  useEffect(() => {
+    setIndex(0);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [slidesPerView]);
 
   useEffect(() => {
     start();
     return stop;
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [index]);
+  }, [index, pagesCount]);
 
   const start = () => {
     stop();
     timer.current = window.setTimeout(() => {
-      setIndex((i) => (i + 1) % len);
+      setIndex((i) => (pagesCount ? (i + 1) % pagesCount : 0));
     }, 4200);
   };
   const stop = () => {
@@ -101,55 +127,61 @@ function Carousel({ items }: { items: any[] }) {
   };
 
   return (
-    <div className="overflow-hidden relative">
+    <div className="overflow-hidden relative" onMouseEnter={stop} onMouseLeave={start}>
       <div
         className="flex transition-transform duration-700 ease-in-out"
-        style={{ width: `${items.length * 100}%`, transform: `translateX(-${index * (100 / items.length)}%)` }}
+        style={{ width: `${pagesCount * 100}%`, transform: `translateX(-${index * (100 / pagesCount)}%)` }}
       >
-        {items.map((item, i) => (
-          <div key={i} className="flex-shrink-0 px-4 md:px-6" style={{ width: `${100 / items.length}%` }}>
-            <div className="relative group">
-              <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-6 blur-2xl rounded-3xl -z-0`} />
-              <div className="relative bg-white border border-gray-100 rounded-2xl p-8 shadow-lg">
-                <div className="flex items-start gap-4 mb-4">
-                  <div className={`p-3 rounded-xl bg-gradient-to-br ${item.gradient} text-white`}>{item.icon}</div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-gray-900">{item.title}</h3>
-                    <p className="mt-1 text-gray-600">{item.description}</p>
+        {pages.map((page, pIdx) => (
+          <div key={pIdx} className="flex-shrink-0 px-4 md:px-6" style={{ width: `${100 / pagesCount}%` }}>
+            <div className="flex gap-4">
+              {page.map((item: any, i: number) => (
+                <div key={i} className="flex-1">
+                  <div className="relative group">
+                    <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-6 blur-2xl rounded-3xl -z-0`} />
+                    <div className="relative bg-white border border-gray-100 rounded-2xl p-6 md:p-8 shadow-lg">
+                      <div className="flex items-start gap-4 mb-3">
+                        <div className={`p-3 rounded-xl bg-gradient-to-br ${item.gradient} text-white`}>{item.icon}</div>
+                        <div>
+                          <h3 className="text-xl md:text-2xl font-bold text-gray-900">{item.title}</h3>
+                          <p className="mt-1 text-gray-600 text-sm md:text-base">{item.description}</p>
+                        </div>
+                      </div>
+
+                      <ul className="grid grid-cols-1 gap-2 mb-4">
+                        {item.benefits.map((b: string, idx: number) => (
+                          <li key={idx} className="flex items-start gap-3">
+                            <svg className="w-5 h-5 mt-1 text-[#00E676]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4" />
+                            </svg>
+                            <span className="text-gray-700 text-sm">{b}</span>
+                          </li>
+                        ))}
+                      </ul>
+
+                      <div className="grid grid-cols-2 gap-3 pt-3 border-t border-gray-100">
+                        {item.showcase.map((s: any, idx: number) => (
+                          <div key={idx} className="text-center">
+                            <div className={`text-lg md:text-xl font-bold bg-gradient-to-r ${item.gradient} bg-clip-text text-transparent`}>{s.value}</div>
+                            <div className="text-sm text-gray-500">{s.label}</div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
-
-                <ul className="grid grid-cols-1 gap-3 mb-6">
-                  {item.benefits.map((b: string, idx: number) => (
-                    <li key={idx} className="flex items-start gap-3">
-                      <svg className="w-5 h-5 mt-1 text-[#00E676]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4" />
-                      </svg>
-                      <span className="text-gray-700">{b}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <div className="grid grid-cols-2 gap-4 pt-4 border-t border-gray-100">
-                  {item.showcase.map((s: any, idx: number) => (
-                    <div key={idx} className="text-center">
-                      <div className={`text-xl font-bold bg-gradient-to-r ${item.gradient} bg-clip-text text-transparent`}>{s.value}</div>
-                      <div className="text-sm text-gray-500">{s.label}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         ))}
       </div>
 
-      {/* pagination / dots */}
+      {/* pagination / dots (pages) */}
       <div className="flex items-center justify-center gap-2 mt-6">
-        {items.map((_, i) => (
+        {Array.from({ length: pagesCount }).map((_, i) => (
           <button
             key={i}
-            aria-label={`Go to slide ${i + 1}`}
+            aria-label={`Go to page ${i + 1}`}
             onClick={() => setIndex(i)}
             className={`w-3 h-3 rounded-full ${i === index ? 'bg-[#0077CC]' : 'bg-gray-300'} transition-all`}
           />
