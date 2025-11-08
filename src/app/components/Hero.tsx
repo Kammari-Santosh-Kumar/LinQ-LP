@@ -22,9 +22,7 @@ export default function Hero() {
           <span className="text-[#00C9FF] font-semibold">5K daily active users</span> 
           — united by one goal: smarter, cleaner, affordable commuting.
         </p>
-         <p className="mt-5 text-lg font-semibold bg-gradient-to-r from-[#FFD700] via-[#FFB300] to-[#FFA000] bg-[length:200%_auto] bg-clip-text text-transparent">
-          🎁 Be our early-access beta users and get a chance to win a Silver Coin!
-        </p>
+        
 
         {/* Button */}
         <Link href="https://forms.gle/EK6ScmSd65bBH2X5A" passHref>
@@ -38,15 +36,7 @@ export default function Hero() {
           Register for early access and get 3 months of free cost-sharing connections.
         </p>
 
-         <div className="mt-6 pt-4 pb-6 md:p-6 border border-gray-300 rounded-lg bg-gradient-to-r from-[#FFD700] to-[#FF8C00] text-center shadow-lg mb-6 max-w-3xl w-full mx-auto">
-          <h3 className="text-xl md:text-2xl font-bold text-white">Silver Coin Winners</h3>
-          <p className="mt-2 text-sm md:text-base text-white">Celebrating our winners</p>
-          <div className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-3 items-start">
-            <img src="/Winner1.jpg" alt="Winner 1" className="w-full aspect-square object-cover rounded-lg shadow-sm" />
-            <img src="/Winner2.jpg" alt="Winner 2" className="w-full aspect-square object-cover rounded-lg shadow-sm" />
-            <img src="/Winner3.png" alt="Winner 3" className="w-full aspect-square object-cover rounded-lg shadow-sm" />
-          </div>
-        </div>
+        {/* winners removed per request */}
       </div>
     </section>
   );

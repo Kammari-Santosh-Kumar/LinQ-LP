@@ -1,3 +1,6 @@
+"use client";
+import { useEffect, useRef, useState } from "react";
+
 const CoreFeatures = () => {
   const features = [
     {
@@ -56,77 +59,104 @@ const CoreFeatures = () => {
   ];
 
   return (
-    <section className="py-24 px-6 md:px-12 bg-white">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <span className="text-sm font-semibold text-gray-500 tracking-wide uppercase">
-            Exclusive Features
-          </span>
-          <h2 className="mt-2 text-3xl md:text-4xl font-bold text-gray-900">
-            Core Unique Features
-          </h2>
-          <p className="mt-4 text-xl text-gray-600 max-w-2xl mx-auto">
-            Experience travel innovations that put safety and convenience first
-          </p>
+    <section className="py-16 px-4 md:px-12 bg-white">
+      <div className="max-w-5xl mx-auto">
+        <div className="text-center mb-8">
+          <span className="text-sm font-semibold text-gray-500 tracking-wide uppercase">Exclusive Features</span>
+          <h2 className="mt-2 text-3xl md:text-4xl font-bold text-gray-900">Core Unique Features</h2>
+          <p className="mt-3 text-gray-600 max-w-2xl mx-auto">Experience travel innovations that put safety and convenience first.</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-          {features.map((feature, index) => (
-            <div key={index} className="relative group">
-              {/* Decorative background blur */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-5 blur-2xl rounded-3xl group-hover:opacity-10 transition-opacity`} />
-              
-              {/* Main content */}
-              <div className="relative bg-white border border-gray-100 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
-                {/* Header */}
-                <div className="flex items-start gap-4 mb-6">
-                  <div className={`p-3 rounded-xl bg-gradient-to-br ${feature.gradient} text-white`}>
-                    {feature.icon}
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-gray-900">{feature.title}</h3>
-                    <p className="mt-1 text-gray-600">{feature.description}</p>
-                  </div>
-                </div>
-
-                {/* Benefits */}
-                <div className="space-y-4 mb-8">
-                  {feature.benefits.map((benefit, idx) => (
-                    <div key={idx} className="flex items-start gap-3">
-                      <svg className={`w-5 h-5 mt-1 ${index === 0 ? 'text-[#00E676]' : 'text-[#FF1493]'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                      <span className="text-gray-600">{benefit}</span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Stats */}
-                <div className="grid grid-cols-2 gap-4 pt-6 border-t border-gray-100">
-                  {feature.showcase.map((stat, idx) => (
-                    <div key={idx} className="text-center">
-                      <div className={`text-xl font-bold bg-gradient-to-r ${feature.gradient} bg-clip-text text-transparent`}>
-                        {stat.value}
-                      </div>
-                      <div className="text-sm text-gray-500">{stat.label}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* CTA */}
-        <div className="mt-16 text-center">
-          
-          <p className="mt-4 text-sm text-gray-500">
-            Available to all verified users. Safety features enabled by default.
-          </p>
+        {/* Carousel */}
+        <div className="relative">
+          <Carousel items={features} />
         </div>
       </div>
     </section>
   );
 };
+
+function Carousel({ items }: { items: any[] }) {
+  const [index, setIndex] = useState(0);
+  const len = items.length;
+  const timer = useRef<number | null>(null);
+
+  useEffect(() => {
+    start();
+    return stop;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [index]);
+
+  const start = () => {
+    stop();
+    timer.current = window.setTimeout(() => {
+      setIndex((i) => (i + 1) % len);
+    }, 4200);
+  };
+  const stop = () => {
+    if (timer.current) {
+      clearTimeout(timer.current);
+      timer.current = null;
+    }
+  };
+
+  return (
+    <div className="overflow-hidden relative">
+      <div
+        className="flex transition-transform duration-700 ease-in-out"
+        style={{ width: `${items.length * 100}%`, transform: `translateX(-${index * (100 / items.length)}%)` }}
+      >
+        {items.map((item, i) => (
+          <div key={i} className="flex-shrink-0 px-4 md:px-6" style={{ width: `${100 / items.length}%` }}>
+            <div className="relative group">
+              <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-6 blur-2xl rounded-3xl -z-0`} />
+              <div className="relative bg-white border border-gray-100 rounded-2xl p-8 shadow-lg">
+                <div className="flex items-start gap-4 mb-4">
+                  <div className={`p-3 rounded-xl bg-gradient-to-br ${item.gradient} text-white`}>{item.icon}</div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-900">{item.title}</h3>
+                    <p className="mt-1 text-gray-600">{item.description}</p>
+                  </div>
+                </div>
+
+                <ul className="grid grid-cols-1 gap-3 mb-6">
+                  {item.benefits.map((b: string, idx: number) => (
+                    <li key={idx} className="flex items-start gap-3">
+                      <svg className="w-5 h-5 mt-1 text-[#00E676]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4" />
+                      </svg>
+                      <span className="text-gray-700">{b}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="grid grid-cols-2 gap-4 pt-4 border-t border-gray-100">
+                  {item.showcase.map((s: any, idx: number) => (
+                    <div key={idx} className="text-center">
+                      <div className={`text-xl font-bold bg-gradient-to-r ${item.gradient} bg-clip-text text-transparent`}>{s.value}</div>
+                      <div className="text-sm text-gray-500">{s.label}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* pagination / dots */}
+      <div className="flex items-center justify-center gap-2 mt-6">
+        {items.map((_, i) => (
+          <button
+            key={i}
+            aria-label={`Go to slide ${i + 1}`}
+            onClick={() => setIndex(i)}
+            className={`w-3 h-3 rounded-full ${i === index ? 'bg-[#0077CC]' : 'bg-gray-300'} transition-all`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default CoreFeatures;

@@ -6,34 +6,43 @@ export default function Testimonials() {
   const [items, setItems] = useState(() => [
     {
       quote:
-        "LinQ transformed my commute — smart matching and friendly riders make every trip enjoyable.",
-      name: "Anika Rao",
-      role: "Product Manager",
-      color: "from-[#00E676] to-[#00C9FF]",
+        "I really liked the Go Together Ride platform - it's a great idea for connecting riders and people who need transport. The response is quick, and they help find matching leads fast. The team communicates clearly and is very supportive. It's a useful service for daily commuters like me. Keep up the good work!",
+      name: "Instagram",
+      role: "",
+      color: "bg-[#E1306C]",
+      instaLink: "https://www.instagram.com/p/DPlX7nzkaUs/?igsh=cTU2ZXRoN3ppZzQ3",
     },
     {
-      quote: "Cost splitting is effortless — rides feel fair and transparent.",
-      name: "Rahul Verma",
-      role: "Designer",
-      color: "bg-[#FFB86B]",
+      quote:
+        "Thank you so much for helping me out till I find a perfect lead. You guys are really spending time and finding the exact match with patience. Thank you so much",
+      name: "Instagram",
+      role: "",
+      color: "bg-[#E1306C]",
+      instaLink: "https://www.instagram.com/p/DPwCSIgiAZV/?igsh=MTExdWk1ZDdpODd5cw==",
     },
     {
-      quote: "Women-only pools make me feel safe and confident every day.",
-      name: "Priya Singh",
-      role: "Software Engineer",
-      color: "bg-[#7C3AED]",
+      quote:
+        "While using instagram I found a page Go together rides i felt very happy such an initiative to save time of each individual and money as well I wish all the good luck and thankful to the page. Thank you sir",
+      name: "Instagram",
+      role: "",
+      color: "bg-[#E1306C]",
+      instaLink: "https://www.instagram.com/p/DPtdNCJkVgz/?igsh=dnFpejc1MGFvbXR2",
     },
     {
-      quote: "LinQ Points are a nice bonus. The app rewards regular sharers.",
-      name: "Karan Patel",
-      role: "Freelancer",
-      color: "bg-[#00A86B]",
+      quote:
+        "I got a wonderful partner through Go Together, and the experience has been really smooth. My partner is cooperative, reliable, and easy to coordinate with, which makes every plan stress-free and enjoyable. This platform truly makes finding the right companion much easier. It would be great if the app created and added more features to highlight shared interests and give space for partners to share quick feedback, so future matches become even stronger.",
+      name: "Instagram",
+      role: "",
+      color: "bg-[#E1306C]",
+      instaLink: "https://www.instagram.com/p/DPQWyRDEQD6/?igsh=N282bWJyOW1sNDN4",
     },
     {
-      quote: "The community is warm and reliable — I recommend LinQ to colleagues.",
-      name: "Meera N",
-      role: "Entrepreneur",
-      color: "bg-[#FF6B6B]",
+      quote:
+        "Had an amazing experience with Go Together Riders. Great vibes, safe rides, and lots of memories made. Can't wait to ride again! 100\n\n#Go TogetherRiders",
+      name: "Instagram",
+      role: "",
+      color: "bg-[#E1306C]",
+      instaLink: "https://www.instagram.com/p/DPN2noEkQaJ/?igsh=dnFlNzZ5YnRxejJs",
     },
   ]);
 
@@ -111,7 +120,7 @@ export default function Testimonials() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-10">
           <h3 className="text-3xl text-[#7a7b7c] font-extrabold">What our community says</h3>
-          <p className="text-gray-500 mt-2">Real stories from riders across LinQ.</p>
+          <p className="text-gray-500 mt-2">Real stories from riders across LinQ. <br />Click on Instagram icon to visit the Testimonials</p>
         </div>
 
         <div className="relative">
@@ -226,7 +235,19 @@ export default function Testimonials() {
                 <div className="tilt-inner">
                   {/* glossy translucent overlay when active */}
                   <div className={isActive ? "glossy-overlay active" : "glossy-overlay"} />
-                  <p className={`text-gray-800 ${i === 0 || i === 4 ? "text-lg" : ""}`}>“{t.quote}”</p>
+                  {/* If item has an Instagram link, show icon (link) above the quote */}
+                  {t.instaLink ? (
+                    <div className="flex flex-col items-center gap-3">
+                      <a href={t.instaLink} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white shadow-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-[#E1306C]" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zM12 7.25a4.75 4.75 0 110 9.5 4.75 4.75 0 010-9.5zm0 1.5a3.25 3.25 0 100 6.5 3.25 3.25 0 000-6.5zM17.75 6a1.12 1.12 0 110 2.25 1.12 1.12 0 010-2.25z" />
+                        </svg>
+                      </a>
+                      <p className={`text-gray-800 ${i === 0 || i === 4 ? "text-lg" : ""}`}>“{t.quote}”</p>
+                    </div>
+                  ) : (
+                    <p className={`text-gray-800 ${i === 0 || i === 4 ? "text-lg" : ""}`}>“{t.quote}”</p>
+                  )}
                   <div className="mt-6 flex items-center gap-4">
                     <div className={`w-12 h-12 rounded-full ${t.color} flex items-center justify-center text-white font-semibold`}>{t.name[0]}</div>
                     <div>
