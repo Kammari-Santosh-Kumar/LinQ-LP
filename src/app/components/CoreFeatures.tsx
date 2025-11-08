@@ -59,7 +59,7 @@ const CoreFeatures = () => {
   ];
 
   return (
-    <section className="py-16 px-4 md:px-12 bg-white">
+    <section className="py-6 md:py-12 px-4 md:px-12 bg-white">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-8">
           <span className="text-sm font-semibold text-gray-500 tracking-wide uppercase">Exclusive Features</span>

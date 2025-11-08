@@ -49,7 +49,7 @@ export default function CareersCTA() {
   return (
     <section
       ref={sectionRef}
-      className="text-center py-24 px-6 md:px-12 bg-gradient-to-r from-orange-500 via-pink-500 to-yellow-400 text-white rounded-3xl mx-6 md:mx-20 mt-16 shadow-lg relative overflow-hidden"
+      className="text-center py-12 md:py-24 px-6 md:px-12 bg-gradient-to-r from-orange-500 via-pink-500 to-yellow-400 text-white rounded-3xl mx-6 md:mx-20 mt-16 shadow-lg relative overflow-hidden"
     >
       <div className="max-w-3xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-extrabold mb-4 drop-shadow-md text-center">

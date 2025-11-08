@@ -182,7 +182,7 @@ export default function Content() {
   ];
 
   return (
-    <section className="relative py-24 px-6 md:px-12 bg-gradient-to-b from-white to-gray-50 text-gray-900 overflow-hidden">
+    <section className="relative py-6 md:py-20 px-6 md:px-12 bg-gradient-to-b from-white to-gray-50 text-gray-900 overflow-hidden">
       {/* decorative gradient circles */}
       <div className="pointer-events-none absolute -right-12 md:-right-24 -top-16 w-72 h-72 rounded-full bg-gradient-to-br from-[#00E676]/20 to-[#00C9FF]/10 blur-3xl" />
 

@@ -81,7 +81,7 @@ export default function Differences() {
   ];
 
   return (
-    <section className="py-24 px-6 md:px-12 bg-gradient-to-b from-gray-50 to-white">
+  <section className="py-6 md:py-16 px-6 md:px-12 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -148,7 +148,7 @@ export default function Differences() {
         </div>
 
         {/* Call to action */}
-        <div className="mt-16 text-center">
+  <div className="mt-2 md:mt-6 text-center">
           <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
             Join thousands of happy commuters who've already made the switch to smarter, community-driven travel.
           </p>
