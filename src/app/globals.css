@@ -1,3 +1,20 @@
+@keyframes insta-flip-dance {
+  0% { transform: rotateY(0deg) scale(1); }
+  10% { transform: rotateY(20deg) scale(1.08); }
+  20% { transform: rotateY(-20deg) scale(1.08); }
+  30% { transform: rotateY(20deg) scale(1.12); }
+  40% { transform: rotateY(-20deg) scale(1.12); }
+  50% { transform: rotateY(0deg) scale(1.15); }
+  60% { transform: rotateY(0deg) scale(1.12); }
+  70% { transform: rotateY(20deg) scale(1.08); }
+  80% { transform: rotateY(-20deg) scale(1.08); }
+  90% { transform: rotateY(0deg) scale(1.05); }
+  100% { transform: rotateY(0deg) scale(1); }
+}
+.animate-insta-flip {
+  animation: insta-flip-dance 2.2s infinite cubic-bezier(.68,-0.55,.27,1.55);
+  will-change: transform;
+}
 @import "tailwindcss";
 /* globals.css */
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');

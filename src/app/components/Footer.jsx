@@ -8,7 +8,7 @@ export default function Footer() {
           href="https://whatsapp.com/channel/0029VbAqx8E4SpkCdVRxhf2E"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-green-500 text-xl"
+          className="text-green-500 text-xl"
           aria-label="WhatsApp"
         >
           <FaWhatsapp />
@@ -17,7 +17,7 @@ export default function Footer() {
           href="https://www.linkedin.com/company/gotogetherrides/"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-blue-600 text-xl"
+          className="text-blue-600 text-xl"
           aria-label="LinkedIn"
         >
           <FaLinkedin />
@@ -26,7 +26,7 @@ export default function Footer() {
           href="https://www.instagram.com/gotogetherrides?igsh=azg0aGp3YnAzZTYy"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-pink-500 text-xl"
+          className="text-pink-500 text-xl"
           aria-label="Instagram"
         >
           <FaInstagram />
@@ -35,7 +35,7 @@ export default function Footer() {
           href="https://x.com/GoTogetherRides"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-blue-400 text-xl"
+          className="text-blue-400 text-xl"
           aria-label="Twitter / X"
         >
           <FaTwitter />
