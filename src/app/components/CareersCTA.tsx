@@ -68,11 +68,6 @@ export default function CareersCTA() {
             </button>
           </Link>
 
-          <Link href="https://docs.google.com/forms/d/e/1FAIpQLSfz0OIz3xzatjYUYH-NuP_RVcrK5cW8ETBjlP-3NfQ9sqWi3Q/viewform" passHref>
-              <button className="w-full sm:w-auto border border-white/40 text-white px-6 py-3 rounded-full font-semibold hover:bg-white/10 transition">
-              Build Our Logo
-            </button>
-          </Link>
         </div>
 
         <p className="mt-6 text-sm text-white/80">
